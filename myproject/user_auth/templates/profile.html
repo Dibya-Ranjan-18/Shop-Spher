@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="profile-wrap">
+    <div class="profile-card">
+        <div class="profile-banner"></div>
+        <div class="profile-body">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-name">{{request.user.username}}</div>
+            <span class="profile-tag">Member</span>
+            <div class="profile-grid">
+                <div class="profile-field">
+                    <div class="label">First Name</div>
+                    <div class="val">{{request.user.first_name|default:"—"}}</div>
+                </div>
+                <div class="profile-field">
+                    <div class="label">Last Name</div>
+                    <div class="val">{{request.user.last_name|default:"—"}}</div>
+                </div>
+                <div class="profile-field full">
+                    <div class="label">Email</div>
+                    <div class="val">{{request.user.email|default:"—"}}</div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <a href="{% url 'updateprofile' %}" class="btn btn-outline">Update Profile</a>
+                <a href="{% url 'reset' %}" class="btn btn-primary">Reset Password</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

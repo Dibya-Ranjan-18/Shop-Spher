@@ -1,0 +1,51 @@
+<nav>
+    <div class="nav-logo">
+        <a href="{% url 'home' %}"><h1>ShopSphere</h1></a>
+    </div>
+
+    {% if request.user.is_authenticated %}
+        {% if search %}
+        <div class="nav-search">
+            <form action="">
+                <input type="text" name="search" placeholder="Search products...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="nav-filters">
+            <form action=""><input type="submit" value="Trending" name="trending"></form>
+            <form action=""><input type="submit" value="Offers" name="offer"></form>
+        </div>
+        {% endif %}
+        <div class="nav-links" id="nav-links">
+            <a href="{% url 'cart' %}">Cart {% if cartproduct_count %}<span class="nav-cart-badge">{{cartproduct_count}}</span>{% endif %}</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'help' %}">Help</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'logout_' %}" class="nav-btn">Logout</a>
+        </div>
+    {% else %}
+        {% if search %}
+        <div class="nav-search">
+            <form action="">
+                <input type="text" name="search" placeholder="Search products...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="nav-filters">
+            <form action=""><input type="submit" value="Trending" name="trending"></form>
+            <form action=""><input type="submit" value="Offers" name="offer"></form>
+        </div>
+        {% endif %}
+        <div class="nav-links" id="nav-links">
+            <a href="{% url 'help' %}">Help</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'login_' %}" class="nav-btn">Login</a>
+        </div>
+    {% endif %}
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="ham-bar ham-bar--top"></span>
+        <span class="ham-bar ham-bar--mid"></span>
+        <span class="ham-bar ham-bar--bot"></span>
+    </button>
+</nav>

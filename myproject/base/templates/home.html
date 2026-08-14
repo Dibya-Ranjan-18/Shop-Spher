@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="wrapper">
+    <h1 class="page-title">Products</h1>
+    <p class="page-sub">Browse our collection and find what you need</p>
+
+    {% if no_match %}
+    <div class="no-match-box">
+        <div style="font-size:2.5rem;">🔍</div>
+        <h2>No Products Found</h2>
+        <p style="margin-top:.4rem;font-size:.85rem;">Try a different search term or browse all categories.</p>
+    </div>
+    {% endif %}
+
+    {% if category %}
+    <div class="category-bar">
+        {% for i in category %}
+        <form action=""><input type="submit" value="{{i}}" name="category"></form>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="product-grid">
+        {% for i in data %}
+        <div class="product-card">
+            <img src="{{i.pimage.url}}" alt="{{i.pname}}">
+            <div class="product-card-body">
+                {% if trend %}<span class="product-badge badge-trend">🔥 Trending</span>{% endif %}
+                {% if offer %}<span class="product-badge badge-offer">50% OFF</span>{% endif %}
+                <div class="product-name">{{i.pname}}</div>
+                <div class="product-desc">{{i.pdesc}}</div>
+                <div class="product-price">₹{{i.price}}</div>
+                <div class="product-actions">
+                    <a href="{% url 'addtocart' i.id %}" class="btn btn-primary">Add to Cart</a>
+                    <a href="{% url 'produc_details' i.id %}" class="btn btn-outline">Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="wrapper">
+    <a href="{% url 'home' %}" class="btn btn-outline btn-sm" style="width:fit-content;margin-bottom:1.2rem;">← Back to Shop</a>
+
+    <div class="product-detail-card">
+        <div class="product-detail-img-side">
+            <img src="{{p_d.pimage.url}}" alt="{{p_d.pname}}">
+        </div>
+
+        <div class="product-detail-info-side">
+            <div class="pd-badges">
+                {% if p_d.trending %}
+                <span class="product-badge badge-trend">🔥 Trending</span>
+                {% endif %}
+                {% if p_d.offer %}
+                <span class="product-badge badge-offer">50% OFF</span>
+                {% endif %}
+            </div>
+
+            <h1 class="pd-name">{{p_d.pname}}</h1>
+
+            <div class="pd-price">₹{{p_d.price}}</div>
+
+            <div class="divider"></div>
+
+            <div class="pd-row">
+                <div class="detail-label">Category</div>
+                <div class="pd-category-tag">{{p_d.pcategory}}</div>
+            </div>
+
+            <div class="pd-row">
+                <div class="detail-label">Description</div>
+                <div class="detail-value">{{p_d.pdesc}}</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="pd-actions">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'addtocart' p_d.id %}" class="btn btn-primary">Add to Cart</a>
+                {% else %}
+                <a href="{% url 'login_' %}" class="btn btn-primary">Login to Add to Cart</a>
+                {% endif %}
+                <a href="{% url 'home' %}" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

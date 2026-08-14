@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="auth-wrap">
+    <div class="auth-card">
+        <div class="auth-brand">ShopSphere</div>
+        <h1 class="auth-title">Reset Password</h1>
+        <p class="auth-sub">Verify your identity to change your password.</p>
+        {% if msg %}<span class="auth-msg">{{msg}}</span>{% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-input" type="text" name="username" id="username" value="{{request.user.username}}" readonly>
+            </div>
+            {% if new_pass %}
+            <div class="form-group">
+                <label class="form-label" for="new">New Password</label>
+                <input class="form-input" type="password" name="new" id="new" placeholder="Enter new password">
+            </div>
+            {% else %}
+            <div class="form-group">
+                <label class="form-label" for="old">Current Password</label>
+                <input class="form-input" type="password" name="old" id="old" placeholder="Enter current password">
+            </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary btn-full">Submit</button>
+        </form>
+        <div class="auth-bottom">
+            <a href="{% url 'profile' %}">← Back to Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

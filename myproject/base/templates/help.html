@@ -1,0 +1,114 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="wrapper">
+    <h1 class="page-title">Help Center</h1>
+    <p class="page-sub">Find answers to common questions and get support</p>
+
+    <div class="info-section">
+        <div class="info-section-header">🛒 Shopping Guide</div>
+        <div class="info-section-body">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-item-icon">🔍</div>
+                    <div class="info-item-title">Search Products</div>
+                    <div class="info-item-text">Use the search bar in the navigation to find products by name or description.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">🏷️</div>
+                    <div class="info-item-title">Browse Categories</div>
+                    <div class="info-item-text">Filter products by category using the category buttons on the home page.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">🔥</div>
+                    <div class="info-item-title">Trending & Offers</div>
+                    <div class="info-item-text">Click "Trending" to see popular items or "Offers" for discounted products.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">🛒</div>
+                    <div class="info-item-title">Add to Cart</div>
+                    <div class="info-item-text">Click "Add to Cart" on any product to add it. You must be logged in to do this.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-section-header">👤 Account</div>
+        <div class="info-section-body">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-item-icon">✏️</div>
+                    <div class="info-item-title">Register</div>
+                    <div class="info-item-text">Create a new account by clicking "Login" then "Sign Up" with your details.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">🔑</div>
+                    <div class="info-item-title">Login</div>
+                    <div class="info-item-text">Use your username and password to sign into your account.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">🔐</div>
+                    <div class="info-item-title">Forgot Password</div>
+                    <div class="info-item-text">Click "Forgot Password" on the login page and enter your username to reset it.</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item-icon">👤</div>
+                    <div class="info-item-title">Update Profile</div>
+                    <div class="info-item-text">Go to Profile and click "Update Profile" to change your name or email.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-section-header">❓ Frequently Asked Questions</div>
+        <div class="info-section-body">
+            <div class="faq-item">
+                <div class="faq-q">How do I place an order?</div>
+                <div class="faq-a">Browse products on the home page, click "Add to Cart", then go to your Cart and click "Proceed to Checkout".</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Can I change the quantity of items in my cart?</div>
+                <div class="faq-a">Yes. In the Cart page, use the "+" and "−" buttons next to each product to increase or decrease the quantity.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How do I remove an item from the cart?</div>
+                <div class="faq-a">Click the "Remove" button next to the product in your Cart page. It will be removed immediately.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is my personal information safe?</div>
+                <div class="faq-a">Yes. We store only the information required for your account. Passwords are hashed and never stored in plain text.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Do I need an account to browse products?</div>
+                <div class="faq-a">No. You can browse all products without an account. However, you need to log in to add items to your cart.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-section-header">📞 Contact Support</div>
+        <div class="info-section-body">
+            <p>Our team is available Monday to Saturday, 9:00 AM – 6:00 PM.</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-val">support@shopsphere.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-val">+91 98765 43210</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-label">Live Chat</div>
+                    <div class="contact-val">Available on site</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
